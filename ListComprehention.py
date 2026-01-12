@@ -73,3 +73,7 @@ countries = [[('Finland', 'Helsinki')], [
 output = [[c.upper(), c[:3].upper(), cap.upper()]
           for sub in countries for c, cap in sub]
 print(output)
+
+output = [{'Country': val1.upper(), 'City': val2.upper()}
+          for sub in countries for val1, val2 in sub]
+print(output)
