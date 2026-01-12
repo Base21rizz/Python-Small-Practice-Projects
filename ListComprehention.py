@@ -83,3 +83,17 @@ names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')],
 output = [name + ' ' + surname
           for sub in names for name, surname in sub]
 print(output)
+
+# Excercise 7
+x1 = int(input("Enter x1: "))
+y1 = int(input("Enter y1: "))
+x2 = int(input("Enter x2: "))
+y2 = int(input("Enter y2: "))
+
+m = (y2 - y1)//(x2-x1)
+print("Slope(m) = ", m)
+
+b = y1 - (m * x1)
+print("y-intercept(b) = ", b)
+
+print(f"The equation is-> Y = {m}X + {b}")
