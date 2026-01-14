@@ -135,7 +135,7 @@ def add_two_nums(x, y):
     return int(x) + int(y)
 
 
-# Excercise
+# Excercise LVL 1
 countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
 names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -146,9 +146,51 @@ def is_odd(num):
         return True
     return False
 
+
+# Excercise LVL 2
+def filtering_using_land(country):
+    if 'land' in country:
+        return True
+    return False
+
+
+def filtering_using_Letters(country):
+    if len(country) >= 6:
+        return True
+    return False
+
+
+def filtering_using_SE(country):
+    if 'E' in country[0]:
+        return True
+    return False
+
+
+def isgreater3(number):
+    if number >= 3:
+        return True
+    return False
+
+
+def to_int(n):
+    return int(n)
+
+
+def zero_index(country):
+    return country[0]
+
+
+def ret_dictonaries(new_dict, country):
+    first_letter = country[0].upper()
+
+    if first_letter in new_dict:
+        new_dict[first_letter] += 1
+    else:
+        new_dict[first_letter] = 1
+    return new_dict
+
+
 # Main Part
-
-
 """ result1 = sum_numbers(1, 2, 3, 4, 5) = 15
     print(result1)
     This is wrong it is here just to understand """
@@ -197,7 +239,7 @@ total = reduce(add_two_nums, numbers_str)
 print(total)
 
 
-# Excercise
+# Excercise LVL 1
 odd_numbers = filter(is_odd, numbers)
 print(list(odd_numbers))  # Prints the list of odd numbers
 odd_numbers = map(is_odd, numbers)
@@ -212,3 +254,33 @@ for i in names:
 print('\n')
 for i in numbers:
     print(i, end=' ')
+print('\n')
+
+# Excercise LVL 2
+output = filter(filtering_using_land, countries)
+print(list(output))
+output = filter(filtering_using_Letters, countries)
+print(list(output))
+output = filter(filtering_using_SE, countries)
+print(list(output))
+
+# Chained implementation (Nested)
+result = reduce(lambda x, y: x+y, filter(isgreater3, map(to_int, numbers_str)))
+# Map ['1', '2', '3', '4', '5'] -> [1, 2, 3, 4, 5]
+# Filter [1, 2, 3, 4, 5] -> [3, 4, 5]
+# Reduce [3, 4, 5] -> 3+4+5 = 12
+print(result)
+
+# Summing all using reduce
+result = reduce(lambda x, y: x+y, numbers)
+print(result)
+
+# Use reduce to concatenate
+result = reduce(lambda x, y: x+','+y, countries)
+print(result)
+print('\n')
+
+# Making dictonary
+new_dict = {}
+result = reduce(ret_dictonaries, countries, {})
+print(result)
