@@ -112,6 +112,17 @@ def square(x):
     return x**2
 
 
+# Built-in Higher Order Functions (Filter)
+# Syntax map(function, iterable)
+numbers = [1, 2, 3, 4, 5]
+
+
+def is_even(num):
+    if num % 2 == 0:
+        return True
+    return False
+
+
 # Main Part
 """ result1 = sum_numbers(1, 2, 3, 4, 5) = 15
     print(result1)
@@ -151,3 +162,7 @@ print(list(numbers_squared))
 # using lambda
 numbers_squared_lambda = map(lambda x: x ** 2, numbers)
 print(list(numbers_squared_lambda))
+
+# Built-in Higher Order Functions (Filter)
+even_numbers = filter(is_even, numbers)
+print(list(even_numbers))
