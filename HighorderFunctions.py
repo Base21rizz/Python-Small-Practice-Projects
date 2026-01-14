@@ -46,6 +46,7 @@ def greeting():
     return 'Welcome to python'
 
 
+# we will use this as the first decorator for the multiple decorator
 def uppercase_decorator(function):
     def wrapper():
         func = function()
@@ -69,6 +70,22 @@ def uppercase_decorator_WD(function):
 
 @uppercase_decorator_WD
 def greeting_WD():
+    return 'Welcome to Python'
+# Applying Multiple Decorators to a Single Function
+# Second decorator
+
+
+def split_string_decorator(function):
+    def wrapper():
+        func = function()
+        splitted_string = func.split()
+        return splitted_string
+    return wrapper
+
+
+@split_string_decorator
+@uppercase_decorator
+def greeting_WMD():
     return 'Welcome to Python'
 
 
@@ -98,3 +115,6 @@ print(g())
 # With Decorator
 print(greeting_WD())
 # With Decorator
+
+# Applying Multiple Decorators to a Single Function
+print(greeting_WMD())
