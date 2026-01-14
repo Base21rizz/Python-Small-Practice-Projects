@@ -103,6 +103,15 @@ def print_full_name(first_name, last_name, country):
     print("I am {} {}. I love to teach.".format(first_name, last_name))
 
 
+# Built-in Higher Order Functions (Map)
+# Syntax map(function, iterable)
+numbers = [1, 2, 3, 4, 5]
+
+
+def square(x):
+    return x**2
+
+
 # Main Part
 """ result1 = sum_numbers(1, 2, 3, 4, 5) = 15
     print(result1)
@@ -135,3 +144,10 @@ print(greeting_WMD())
 
 # Accepting Parameters in Decorator Functions
 print_full_name("Shoumik", "Islam", "Finland")
+
+# Built-in Higher Order Functions (Map)
+numbers_squared = map(square, numbers)
+print(list(numbers_squared))
+# using lambda
+numbers_squared_lambda = map(lambda x: x ** 2, numbers)
+print(list(numbers_squared_lambda))
