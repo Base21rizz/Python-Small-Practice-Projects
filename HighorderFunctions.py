@@ -88,6 +88,20 @@ def split_string_decorator(function):
 def greeting_WMD():
     return 'Welcome to Python'
 
+# Accepting Parameters in Decorator Functions
+
+
+def decorator_with_parameters(function):
+    def wrapper_accepting_parameters(par1, par2, par3):
+        function(par1, par2, par3)
+        print("I live in {}".format(par3))
+    return wrapper_accepting_parameters
+
+
+@decorator_with_parameters
+def print_full_name(first_name, last_name, country):
+    print("I am {} {}. I love to teach.".format(first_name, last_name))
+
 
 # Main Part
 """ result1 = sum_numbers(1, 2, 3, 4, 5) = 15
@@ -118,3 +132,6 @@ print(greeting_WD())
 
 # Applying Multiple Decorators to a Single Function
 print(greeting_WMD())
+
+# Accepting Parameters in Decorator Functions
+print_full_name("Shoumik", "Islam", "Finland")
