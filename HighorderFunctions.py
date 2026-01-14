@@ -32,6 +32,14 @@ def Function_as_return_value(type):
         return absolute
 
 
+def add_ten():
+    ten = 10
+
+    def add(num):
+        return num + ten
+    return add
+
+
 # Main Part
 """ result1 = sum_numbers(1, 2, 3, 4, 5) = 15
     print(result1)
@@ -46,3 +54,7 @@ result_FARV = Function_as_return_value('cube')
 print(result_FARV(3))
 result_FARV = Function_as_return_value('absolute')
 print(result_FARV(-3))
+
+closure_result = add_ten()
+print(closure_result(5))  # 15
+print(closure_result(10))  # 20
