@@ -1,4 +1,5 @@
 from datetime import datetime
+from datetime import date
 
 # Getting datetime Information
 now = datetime.now()
@@ -38,3 +39,12 @@ date_string = "5 December, 2019"
 print("date_string =", date_string)
 date_object = datetime.strptime(date_string, "%d %B, %Y")
 print("date_object =", date_object)
+
+# Using date from datetime
+d = date(2020, 1, 1)
+print(d)
+print('Current date:', d.today())
+today = date.today()
+print("Current year:", today.year)
+print("Current Month:", today.month)
+print("Current day:", today.day)
